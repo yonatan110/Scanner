@@ -1,0 +1,31 @@
+{% extends "My_network_website.html" %}
+
+{% block all_network_activity %}
+    <h1>Network Activity</h1>
+<a href="/">Home Page</a>
+<table id="data" class="table table-striped">
+    <thead>
+        <tr>
+            <th>IP</th>
+            <th>First Seen</th>
+            <th>Last seen</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for ip_address in collection %}
+        <tr>
+            <td style="{{'color: green; font-weight: bold;' if ip_address.last_seen}}
+                       {{'color: red; font-weight: bold;' if not ip_address.last_seen}}">
+                {{ip_address.ip}}
+            </td>
+            <td>{{ip_address.first_seen}}</td>
+            <td>{{ip_address.last_seen}}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock all_network_activity %}
+
+
+
