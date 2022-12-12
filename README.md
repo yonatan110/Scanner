@@ -1,3 +1,3 @@
 # Scanner
 
-# Scanning all IP addresses on the netowrk and show when first seen and when last seen
+# Scanning all IP addresses on the network and show when first seen and when last seen
